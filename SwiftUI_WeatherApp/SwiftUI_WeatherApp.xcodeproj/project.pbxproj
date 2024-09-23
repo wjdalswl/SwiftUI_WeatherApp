@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D47977F2CA0756D008A7D78 /* SwiftUI_WeatherAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D47977E2CA0756D008A7D78 /* SwiftUI_WeatherAppApp.swift */; };
+		2D47977F2CA0756D008A7D78 /* SwiftUI_WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D47977E2CA0756D008A7D78 /* SwiftUI_WeatherApp.swift */; };
 		2D4797812CA0756D008A7D78 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4797802CA0756D008A7D78 /* HomeView.swift */; };
 		2D4797832CA0756F008A7D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4797822CA0756F008A7D78 /* Assets.xcassets */; };
 		2D4797862CA0756F008A7D78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4797852CA0756F008A7D78 /* Preview Assets.xcassets */; };
@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		2D47977B2CA0756D008A7D78 /* SwiftUI_WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D47977E2CA0756D008A7D78 /* SwiftUI_WeatherAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_WeatherAppApp.swift; sourceTree = "<group>"; };
+		2D47977E2CA0756D008A7D78 /* SwiftUI_WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_WeatherApp.swift; sourceTree = "<group>"; };
 		2D4797802CA0756D008A7D78 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2D4797822CA0756F008A7D78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D4797852CA0756F008A7D78 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		2D47977D2CA0756D008A7D78 /* SwiftUI_WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				2D47977E2CA0756D008A7D78 /* SwiftUI_WeatherAppApp.swift */,
+				2D47977E2CA0756D008A7D78 /* SwiftUI_WeatherApp.swift */,
 				2D4797802CA0756D008A7D78 /* HomeView.swift */,
 				2D47978E2CA08E5F008A7D78 /* MapView.swift */,
 				2D4797902CA08E66008A7D78 /* ListView.swift */,
@@ -150,7 +150,7 @@
 				2D47978F2CA08E5F008A7D78 /* MapView.swift in Sources */,
 				2D4797912CA08E66008A7D78 /* ListView.swift in Sources */,
 				2D4797812CA0756D008A7D78 /* HomeView.swift in Sources */,
-				2D47977F2CA0756D008A7D78 /* SwiftUI_WeatherAppApp.swift in Sources */,
+				2D47977F2CA0756D008A7D78 /* SwiftUI_WeatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@ struct MapView: View {
             
             Text("지도")
                 .font(.title)
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
         }
     }
 }

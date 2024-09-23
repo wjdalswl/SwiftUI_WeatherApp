@@ -18,7 +18,7 @@ struct ListView: View {
             
             Text("날짜 리스트")
                 .font(.title)
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
         }
     }
 }

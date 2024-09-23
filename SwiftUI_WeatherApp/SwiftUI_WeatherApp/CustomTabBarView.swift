@@ -58,7 +58,7 @@ struct CustomTabBar: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 29, height: 27)
-                        .foregroundColor(.white)
+                        .foregroundStyle(.white)
                 }
                 
                 Spacer()
@@ -75,7 +75,7 @@ struct CustomTabBar: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 14, height: 13)
-                            .foregroundColor(
+                            .foregroundStyle(
                                 currentPage == 0 ? .white : .white.opacity(0.45)
                             )
                         ForEach(1..<(totalPage-1), id: \.self) { dot in
@@ -101,7 +101,7 @@ struct CustomTabBar: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 28, height: 27)
-                        .foregroundColor(.white)
+                        .foregroundStyle(.white)
                 }
             }
             .padding(.bottom, 43)
@@ -111,7 +111,7 @@ struct CustomTabBar: View {
         .overlay(
             Rectangle()
                 .frame(height: 0.4)
-                .foregroundColor(.white), alignment: .top
+                .foregroundStyle(.white), alignment: .top
         )
     }
 }
