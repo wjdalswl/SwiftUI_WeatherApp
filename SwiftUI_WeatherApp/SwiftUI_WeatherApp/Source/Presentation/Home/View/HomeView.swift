@@ -60,7 +60,7 @@ struct HomeView: View {
                         HStack(spacing: 29) {
                             ForEach(viewModel.weatherData, id: \.hour) { data in
                                 VStack(spacing: 10) {
-                                    Text("\(data.hour)시")
+                                    Text("\(data.hour)")
                                         .font(.system(size: 17, weight: .medium))
                                         .foregroundStyle(.white)
                                     
@@ -70,7 +70,7 @@ struct HomeView: View {
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 45, height: 40)
                                     
-                                    Text("\(data.temperature)°")
+                                    Text(" \(data.temperature)°")
                                         .font(.system(size: 22, weight: .medium))
                                         .foregroundStyle(.white)
                                 }

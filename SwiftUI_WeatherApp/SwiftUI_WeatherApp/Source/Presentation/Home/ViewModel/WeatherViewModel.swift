@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 final class WeatherViewModel: ObservableObject {
-    @Published var weatherData: [(hour: Int, temperature: Int, imageName: String)] = []
+    @Published var weatherData: [(hour: String, temperature: Int, imageName: String)] = []
     private var cancellables = Set<AnyCancellable>()
     
     private let weatherUseCase: WeatherUseCase
