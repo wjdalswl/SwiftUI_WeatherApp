@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DailyWeatherDTO: Codable {
+    let location: String
     let todayWeather: [DailyWeather]
     let tomorrowWeather: [DailyWeather]
 }

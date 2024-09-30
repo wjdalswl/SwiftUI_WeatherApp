@@ -11,8 +11,10 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel = WeatherViewModel(
-        fetchWeatherUseCase: DefaultWeatherUseCase(
-            weatherRepository: DefaultWeatherRepository()
+        weatherUseCase: DefaultWeatherUseCase(
+            weatherService: DefaultWeatherService(
+                weatherRepository: DefaultWeatherRepository()
+            )
         )
     )
     
@@ -24,27 +26,30 @@ struct HomeView: View {
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView {
-                VStack(spacing: 0) {
-                    Text("Seongnam-si")
-                        .font(.system(size: 37, weight: .regular))
-                        .foregroundStyle(.white)
-                    Text(" 21º")
-                        .font(.system(size: 102, weight: .ultraLight))
-                        .foregroundStyle(.white)
-                        .padding(EdgeInsets(top: -15, leading: 0, bottom: -11, trailing: 0))
-                    Text("Partly Cloud")
-                        .font(.system(size: 24, weight: .regular))
-                        .foregroundStyle(.white)
-                    HStack {
-                        Text("H: 29°")
-                            .font(.system(size: 21, weight: .medium))
+                if let currentWeather = viewModel.currentWeatherData {
+                    VStack(spacing: 0) {
+                        Text("\(currentWeather.location)")
+                            .font(.system(size: 37, weight: .regular))
                             .foregroundStyle(.white)
-                        Text("L: 15°")
-                            .font(.system(size: 21, weight: .medium))
+                        Text(" \(currentWeather.currentTemperature)°")
+                            .font(.system(size: 102, weight: .ultraLight))
                             .foregroundStyle(.white)
+                            .padding(EdgeInsets(top: -15, leading: 0, bottom: -11, trailing: 0))
+                        Text("\(currentWeather.currentWeather)")
+                            .font(.system(size: 24, weight: .regular))
+                            .foregroundStyle(.white)
+                        HStack {
+                            Text("최고: \(currentWeather.highestTemperature)°")
+                                .font(.system(size: 21, weight: .medium))
+                                .foregroundStyle(.white)
+                            Text("최저: \(currentWeather.lowestTemperature)°")
+                                .font(.system(size: 21, weight: .medium))
+                                .foregroundStyle(.white)
+                        }
                     }
+                    .padding(.top, 78)
                 }
-                .padding(.top, 78)
+                
                 
                 VStack(spacing: 14) {
                     Text("내일의 최고 기온은 21°로, 더 낮은 기온이 예상됩니다.")
