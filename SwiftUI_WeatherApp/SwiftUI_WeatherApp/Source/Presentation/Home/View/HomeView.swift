@@ -123,8 +123,9 @@ struct HomeView: View {
                                 .font(.system(size: 22, weight: .medium))
                                 .foregroundStyle(.gray)
                             
-                            CustomProgressBar(startValue: 20, endValue: 80, circleValue: 40)
-                                .frame(width: 110)
+                            CustomProgressBar(startValue: 20, endValue: 90, circleValue: 40)
+                                .frame(width: 110, height: 4)
+                                .padding(0)
                             
                             Text("19°")
                                 .font(.system(size: 22, weight: .medium))

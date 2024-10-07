@@ -40,30 +40,26 @@ struct CustomProgressBar: View {
                             .offset(x: widthForCircleOffset(circleValue, totalWidth: geometry.size.width))
                     }
                 }
-                .padding()
             }
         }
     }
     
     func widthForStartOffset(totalWidth: CGFloat) -> CGFloat {
-        let effectiveWidth = totalWidth - 60
         let ratio = startValue / 100
-        return effectiveWidth * ratio
+        return totalWidth * ratio
     }
-    
+
     func widthForRange(totalWidth: CGFloat) -> CGFloat {
-        let effectiveWidth = totalWidth - 60
         let ratio = (endValue - startValue) / 100
-        return effectiveWidth * ratio
+        return totalWidth * ratio
     }
-    
+
     func widthForCircleOffset(_ value: CGFloat, totalWidth: CGFloat) -> CGFloat {
-        let effectiveWidth = totalWidth - 60
         let ratio = (value - startValue) / (endValue - startValue)
-        return effectiveWidth * ratio + widthForStartOffset(totalWidth: totalWidth) - 10
+        return totalWidth * ratio + widthForStartOffset(totalWidth: totalWidth) - 10
     }
 }
 
 #Preview {
-    CustomProgressBar(startValue: 20, endValue: 80, circleValue: 40)
+    CustomProgressBar(startValue: 20, endValue: 90, circleValue: 40)
 }
