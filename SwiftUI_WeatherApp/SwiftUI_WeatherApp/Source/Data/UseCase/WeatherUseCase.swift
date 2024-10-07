@@ -39,10 +39,13 @@ final class DefaultWeatherUseCase: WeatherUseCase {
                 
                 var weatherDataList: [(hour: String, temperature: Int, imageName: String)] = []
                 
-                for (index, weatherData) in combinedWeatherData.enumerated() {
-                    let formattedHour = self.weatherService.formatHour(hour: weatherData.hour, index: index)
-                    let imageName = self.weatherService.getWeatherImage(hour: weatherData.hour, weather: weatherData.weather, sunStatus: weatherData.sunStatus ?? "")
-                    weatherDataList.append((hour: formattedHour, temperature: weatherData.temperature, imageName: imageName))
+                for i in 0..<24 {
+                    let hour = (currentHour + i) % 24
+                    if let weatherData = combinedWeatherData.first(where: { $0.hour == hour }) {
+                        let formattedHour = self.weatherService.formatHour(hour: hour, index: i)
+                        let imageName = self.weatherService.getWeatherImage(hour: weatherData.hour, weather: weatherData.weather, sunStatus: weatherData.sunStatus ?? "")
+                        weatherDataList.append((hour: formattedHour, temperature: weatherData.temperature, imageName: imageName))
+                    }
                 }
                 
                 return weatherDataList
