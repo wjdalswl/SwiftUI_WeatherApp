@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct HomeView: View {
     @StateObject var viewModel = WeatherViewModel(
         weatherUseCase: DefaultWeatherUseCase(
@@ -61,6 +59,7 @@ struct HomeView: View {
                         .fill(.white.opacity(0.2))
                         .frame(height: 1)
                     
+
                     ScrollView(.horizontal) {
                         HStack(spacing: 29) {
                             ForEach(viewModel.weatherData, id: \.hour) { data in
@@ -80,6 +79,7 @@ struct HomeView: View {
                                         .foregroundStyle(.white)
                                 }
                             }
+                        
                         }
                     }
                 }
@@ -87,6 +87,67 @@ struct HomeView: View {
                 .frame(width: UIScreen.main.bounds.width - 40)
                 .background(.blue.opacity(0.15))
                 .cornerRadius(15)
+                
+                VStack {
+                    HStack {
+                        Image("ic_Calendar")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundStyle(.gray)
+                        
+                        Text("10일간의 일기예보")
+                            .font(.system(size: 15, weight: .regular))
+                            .foregroundStyle(.gray)
+                        
+                        Spacer()
+                    }
+                    
+                    Rectangle()
+                        .fill(.white.opacity(0.2))
+                        .frame(height: 1)
+                    
+                    ForEach(0..<10, id: \.self) { index in
+                        HStack {
+                            
+                            Text("오늘")
+                                .font(.system(size: 22, weight: .medium))
+                                .foregroundStyle(.white)
+                            
+                            Image("ic_PartlyCloud")
+                                .resizable()
+                                .frame(width: 35, height: 30)
+                                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                            
+                            Text("16°")
+                                .font(.system(size: 22, weight: .medium))
+                                .foregroundStyle(.gray)
+                            
+                            CustomProgressBar(startValue: 20, endValue: 90, circleValue: 40)
+                                .frame(width: 110, height: 4)
+                                .padding(0)
+                            
+                            Text("19°")
+                                .font(.system(size: 22, weight: .medium))
+                                .foregroundStyle(.white)
+                            
+                        }
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                        
+                        if index < 9 {
+                            Rectangle()
+                                .fill(.white.opacity(0.2))
+                                .frame(height: 1)
+                        }
+                    }
+                }
+                .padding(15)
+                .frame(width: UIScreen.main.bounds.width - 40)
+                .background(.blue.opacity(0.15))
+                .cornerRadius(15)
+                
+                Spacer(minLength: 50)
             }
         }
     }
